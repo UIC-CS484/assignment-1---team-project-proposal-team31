@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Luis's App</title>
+    <style>
+      #container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 10% 1fr 1fr 20%;
+        grid-template-areas:
+          "header header header header header header"
+          "apis apis apis aud aud aud"
+          "apis apis apis aud aud aud"
+          "footer footer footer footer footer footer";
+        column-gap: 5px;
+        row-gap: 5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+      }
+      .item-1 {
+        grid-area: header;
+        background-color: black;
+        color: white;
+        justify-content: center;
+      }
+      .item-2 {
+        grid-area: apis;
+        background-color: rgb(45, 45, 45);
+        color: white;
+        text-align: center;
+      }
+      .item-3 {
+        grid-area: aud;
+        background-color: rgb(45, 45, 45);
+        color: white;
+        text-align: center;
+      }
+      .item-4 {
+        grid-area: footer;
+        color: white;
+      }
+      header {
+        text-align: center;
+      }
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: flex-start;
+      }
+      #users,
+      #goals,
+      #why,
+      #api_info,
+      #data_info,
+      #db_info {
+        text-align: start;
+      }
+      #resources,
+      #qna,
+      #accessibility {
+        flex: 0 0 32%;
+        text-align: start;
+        justify-content: space-evenly;
+        background-color: rgb(210, 78, 144);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header class="item-1">Match Your Songs to Your Conditions</header>
+      <div class="item-2">
+        Api Section
+        <div id="api_info">
+          <p style="font-weight: bold">RESTful APIs Used</p>
+          <ul>
+            <li>Spotify API</li>
+            <li>OpenWeather API</li>
+          </ul>
+        </div>
+        <div id="data_info">
+          <p style="font-weight: bold">Insight provided from data</p>
+          <p>
+            The data may show users what the ideal songs or playlists might be
+            depending on their interests as well as the conditions in their
+            location
+          </p>
+          <p>The data may also show users recommendations or similar songs.</p>
+          <p style="font-weight: bold"></p>
+          What data from authenticated site users will be collected?
+          <p>
+            It seems like right now, only Spotify will need the username/email
+            and password of the users.
+          </p>
+        </div>
+        <div id="db_info">
+          <p style="font-weight: bold">Database information</p>
+          <ul>
+            <li>Username</li>
+            <li>Email</li>
+            <li>Password</li>
+            <li>Subscription</li>
+            <li>Location</li>
+          </ul>
+        </div>
+      </div>
+      <div class="item-3">
+        Audience Section
+        <div id="users">
+          <p style="font-weight: bold">Who am I serving?</p>
+          <ul>
+            <li>Spotify users</li>
+            <li>Dancers</li>
+            <li>Fans of music and dance</li>
+            <li>
+              People interested in weather data or just curious about music
+            </li>
+          </ul>
+        </div>
+        <div id="goals">
+          <p style="font-weight: bold">Goals</p>
+          <ul>
+            <li>To promote the enjoyment of music and dance</li>
+            <li>To promote getting outdoors</li>
+            <li>To promote being active</li>
+          </ul>
+        </div>
+        <div id="why">
+          <p style="font-weight: bold">Why?</p>
+          <p>
+            I enjoy listening to music and I wish I could spend some more time
+            outside doing so, so I figured that pairing music and weather data
+            would be fun.
+          </p>
+          <p>
+            Some songs remind me of certain times of day or seasons. It would be
+            cool to input the name of a song, and use some of its attributes to
+            match it up with the current climate.
+          </p>
+        </div>
+      </div>
+      <footer class="item-4">
+        <div id="resources">
+          <p style="font-weight: bold">Resources</p>
+          <p>APIs</p>
+          <ul>
+            <li>
+              <a href="https://developer.spotify.com/documentation/web-api/"
+                >Spotify</a
+              >
+            </li>
+          </ul>
+          <p>Sites</p>
+          <ul>
+            <li>
+              I would like to model the returned content like the content that
+              is returned here at Dictionary.com <br />
+              <a href="https://www.dictionary.com/">Dictonary</a>
+            </li>
+          </ul>
+          <p>Other Resources</p>
+          <ul>
+            <li>
+              CSS Assistance: <a href="https://css-tricks.com">CSS-Tricks</a>
+            </li>
+            <li>
+              W3 Schools: <a href="https://www.w3schools.com/">W3Schools</a>
+            </li>
+            <li>MDN: <a href="https://developer.mozilla.org/en-US/">MDN</a></li>
+            <li>
+              Node.js Docs: <a href="https://nodejs.org/en/docs/">NodeJs</a>
+            </li>
+          </ul>
+        </div>
+        <div id="qna">
+          <p style="font-weight: bold">Questions and concerns</p>
+          <p>Concerns</p>
+          <ul>
+            <li>
+              Unaware of what I do not know. Thus, I may encounter blocking
+              challenges.
+            </li>
+            <li>Could use more APIs to make a more robust product.</li>
+          </ul>
+          <p>Questions</p>
+          <ul>
+            <li>Should the app be progressive?</li>
+            <li>Where should the app be hosted?</li>
+            <li>
+              What if I am awaiting approval for an APIKey/token or any other
+              verification step and I am ultimately denied access?
+            </li>
+            <li>
+              Does this general structure need to be maintained as I work on the
+              project?
+            </li>
+            <li>
+              What if the data or API that I am using results to be incompatible
+              with the technologies we intend to use?
+            </li>
+            <li>
+              If a component-based framework may be used down the line, does
+              that mean that this structure must be recreated?
+            </li>
+            <li>
+              When it comes to routing, should we make new pages in the form of
+              HTML files or should we use methods to render the appropriate
+              page?
+            </li>
+          </ul>
+        </div>
+        <div id="accessibility">
+          <p style="font-weight: bold">Accessibility</p>
+          <button id="increase_size">Increase Text Size</button>
+          <button id="decrease_size">Decrease Text Size</button>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.getElementById("increase_size").addEventListener("click", () => {
+        document.getElementById("container").style.fontSize = "24px";
+      });
+      document.getElementById("decrease_size").addEventListener("click", () => {
+        document.getElementById("container").style.fontSize = "28px";
+      });
+    </script>
+  </body>
+</html>
